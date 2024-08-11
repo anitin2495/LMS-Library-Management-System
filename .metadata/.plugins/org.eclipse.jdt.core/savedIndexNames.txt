@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\Summer_24\Software Engineering\LibraryManagementSystem\LMS_V5.1\.metadata\.plugins\org.eclipse.jdt.core
+2412198279.index
+3803894794.index
+1660860588.index
+1865797976.index

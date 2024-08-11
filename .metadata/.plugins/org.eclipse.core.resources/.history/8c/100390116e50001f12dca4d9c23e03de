@@ -1,0 +1,131 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LibrarianDashboard extends JFrame {
+    public LibrarianDashboard() {
+        setTitle("Library Dashboard");
+        setSize(240, 1000);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel();
+        add(panel);
+        placeComponents(panel);
+
+        setVisible(true);
+    }
+
+    private void placeComponents(JPanel panel) {
+        panel.setLayout(null);
+
+        // Existing buttons and components
+        JButton checkOutButton = new JButton("Check Out Items");
+        checkOutButton.setBounds(10, 50, 200, 35);
+        panel.add(checkOutButton);
+
+        JButton returnButton = new JButton("Return Items");
+        returnButton.setBounds(10, 120, 200, 35);
+        panel.add(returnButton);
+
+        JButton renewButton = new JButton("Renew Items");
+        renewButton.setBounds(10, 190, 200, 35);
+        panel.add(renewButton);
+
+        JButton manageBooksButton = new JButton("Manage Books");
+        manageBooksButton.setBounds(10, 260, 200, 35);
+        panel.add(manageBooksButton);
+
+        JButton viewUsersButton = new JButton("View Users");
+        viewUsersButton.setBounds(10, 330, 200, 35);
+        panel.add(viewUsersButton);
+
+        // Add View Checked Out Items button
+        JButton viewCheckedOutButton = new JButton("View Checked Out Items");
+        viewCheckedOutButton.setBounds(10, 400, 200, 35);
+        panel.add(viewCheckedOutButton);
+
+        JButton showOverdueFinesButton = new JButton("Show Overdue Fines");
+        showOverdueFinesButton.setBounds(10, 470, 200, 35);
+        panel.add(showOverdueFinesButton);
+
+        JButton showRequestItemButton = new JButton("Request Item");
+        showRequestItemButton.setBounds(10, 540, 200, 35);
+        panel.add(showRequestItemButton);
+        
+        JButton viewInventoryButton = new JButton("View Inventory");
+        viewInventoryButton.setBounds(10, 610, 200, 35);
+        panel.add(viewInventoryButton);
+
+        // Add Exit button
+        JButton exitButton = new JButton("Exit");
+        exitButton.setBounds(10, 680, 200, 35);
+        panel.add(exitButton);
+
+        // Action listeners for buttons
+        checkOutButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new CheckOutItems();
+            }
+        });
+
+        returnButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ReturnItems();
+            }
+        });
+
+        renewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new RenewItems();
+            }
+        });
+
+        manageBooksButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ManageBooks();
+            }
+        });
+
+        viewUsersButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ManageUsers();
+            }
+        });
+
+        viewCheckedOutButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new ViewCheckedOutItems();
+            }
+        });
+
+        showOverdueFinesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new OverdueFines();
+            }
+        });
+
+        showRequestItemButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new RequestItems();
+            }
+        });
+        
+        viewInventoryButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new InventoryView();
+            }
+        });
+
+        // Action listener for Exit button
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new LibrarianDashboard();
+    }
+}
