@@ -84,7 +84,7 @@ The database schema is defined as follows:
 
 1. **Clone the Repository**:  
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/anitin2495/LMS-Library-Management-System.git
    ```
 
 2. **Set Up MySQL Database**:
